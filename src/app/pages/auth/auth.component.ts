@@ -18,7 +18,25 @@ export class AuthComponent {
   }
 
   login(email, password) {
-    this.authService.login(email, password)
+    var accessToken = localStorage.getItem('fb');
+    if(accessToken!==null) {
+      this.authService.loginSocial(accessToken)
+        .subscribe(() => {
+          this.router.navigate(['/home']);
+        }, this.handleError)
+      ;
+    }
+    else {
+      this.authService.login(email, password)
+        .subscribe(() => {
+          this.router.navigate(['/home']);
+        }, this.handleError)
+      ;
+    }
+  }
+
+  loginFB(): void {
+    this.authService.loginSocial(localStorage.getItem('fb'))
       .subscribe(() => {
         this.router.navigate(['/home']);
       }, e => this.handleError(e));

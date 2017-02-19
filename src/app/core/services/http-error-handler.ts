@@ -19,4 +19,10 @@ export class HttpErrorHandler {
     }
   }
 
+  handleSocial(error: any) {
+      this.toastService.error('Please sign up first');
+    //  this.authService.logout();
+      this.router.navigate(['signup']);
+  }
+
 }

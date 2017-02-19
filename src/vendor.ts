@@ -14,6 +14,8 @@ import "time-ago";
 import "aphrodite";
 import "bootstrap/dist/css/bootstrap.css";
 
+import "bootstrap-social/bootstrap-social.css"
+
 if ('production' === ENV) {
 } else {
 }

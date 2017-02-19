@@ -36,7 +36,12 @@ export class SignupComponent implements OnInit {
 
     this.userService.create(params)
       .mergeMap(() => {
-        return this.authService.login(params.email, params.password);
+        let accessToken = localStorage.getItem('fb');
+        if(accessToken!==null) {
+          return this.authService.loginSocial(accessToken);
+        }
+          return this.authService.login(params.email, params.password);
+
       })
       .subscribe(() => {
         this.router.navigate(['/home']);
@@ -45,14 +50,20 @@ export class SignupComponent implements OnInit {
   }
 
   private initForm() {
-    this.name = new FormControl('', Validators.compose([
+    let email = localStorage.getItem('email');
+    let name = localStorage.getItem('name');
+    //alert(email);
+    //alert(name);
+    this.name = new FormControl(name!== null?name:'', Validators.compose([
       Validators.required,
       Validators.minLength(4),
     ]));
-    this.email = new FormControl('', Validators.compose([
+    this.email = new FormControl(email!== null?email:'', Validators.compose([
       Validators.required,
       Validators.pattern(EMAIL_PATTERN),
     ]));
+    localStorage.removeItem('email');
+    localStorage.removeItem('name');
     this.password = new FormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(8),

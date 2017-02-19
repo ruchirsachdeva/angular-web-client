@@ -27,7 +27,23 @@ export class AuthService {
     });
   }
 
+
+  loginSocial(accessToken: any): Observable<Response> {
+          const body = {
+      token: accessToken
+    };
+    return this.http.post('/api/auth/facebook', body).do((resp: Response) => {
+      localStorage.setItem('jwt', resp.json().token);
+      this.authEvents.next(new DidLogin());
+    });
+  }
+
+
+
   logout(): void {
+    localStorage.removeItem('fb')
+    localStorage.removeItem('email')
+    localStorage.removeItem('name')
     localStorage.removeItem('jwt');
     this.authEvents.next(new DidLogout());
   }
@@ -40,6 +56,15 @@ export class AuthService {
     if (!this.isSignedIn()) return null; // It means unknown.
     const decoded = jwtDecode(localStorage.getItem('jwt'));
     return user.id + '' === decoded.sub;
+  }
+
+  isSignedInFB(): boolean {
+    return localStorage.getItem('fb') !== null;
+  }
+
+  signInFacebook(accessToken: string): void {
+   // alert('accessToken');
+    localStorage.setItem('fb', accessToken);
   }
 
   get events(): Observable<AuthEvent> {

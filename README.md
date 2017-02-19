@@ -1,12 +1,12 @@
-# Angular2 Tutorial
+# AYS Read me
  
 [![Build Status](https://travis-ci.org/springboot-angular2-tutorial/angular2-app.svg?branch=master)](https://travis-ci.org/springboot-angular2-tutorial/angular2-app)
 [![Coverage Status](https://coveralls.io/repos/github/springboot-angular2-tutorial/angular2-app/badge.svg?branch=master)](https://coveralls.io/github/springboot-angular2-tutorial/angular2-app?branch=master)
 
-This repository is an example application for angular2 tutorial.
+This repository is a front end app for AYS.
 
-[Demo](https://micropost.hana053.com/)
-
+[Demo](http://localhost:4200)
+<!--https://micropost.hana053.com/-->
 * Ahead-of-time compilation
 * Lazy Loading
 * Preloading 

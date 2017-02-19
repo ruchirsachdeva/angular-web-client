@@ -28,6 +28,8 @@ export class UserService {
   }
 
   create(params: UserParams): Observable<Response> {
+    var fb = localStorage.getItem('fb');
+    params.token= fb;
     return this.http.post(url, params);
   }
 

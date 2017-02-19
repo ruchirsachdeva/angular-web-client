@@ -10,6 +10,7 @@ import {HomeModule} from "./pages/home/home.module";
 import {AuthModule} from "./pages/auth/auth.module";
 import {TopModule} from "./pages/top/top.module";
 import {NoContentComponent} from "./pages/no-content/no-content.component";
+import {FacebookLoginModule} from "./components/facebook/facebookLogin.module";
 import {HeaderModule} from "./components/header/header.module";
 import {SharedModule} from "./shared/shared.module";
 import {
@@ -38,6 +39,7 @@ import {
     AuthModule,
     TopModule,
     HeaderModule,
+    FacebookLoginModule,
   ],
   providers: [
     ENV_PROVIDERS,
