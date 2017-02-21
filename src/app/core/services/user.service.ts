@@ -30,10 +30,12 @@ export class UserService {
   create(params: UserParams): Observable<Response> {
     var fb = localStorage.getItem('fb');
     params.token= fb;
+    params.role="ROLE_BUYER"
     return this.http.post(url, params);
   }
 
   updateMe(userParam: UserParams): Observable<Response> {
+    userParam.role="ROLE_PARTNER"
     return this.http.patch(`${url}/me`, userParam);
   }
 

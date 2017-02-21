@@ -13,6 +13,7 @@ export interface User {
   userStats?:UserStats;
   isFollowedByMe?:boolean;
   avatarHash?:string;
+  role?:string;
 }
 
 export interface RelatedUser extends User {

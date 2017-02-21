@@ -14,4 +14,5 @@ export interface UserParams {
   password?: string;
   name?: string;
   token?: any;
+  role?: string;
 }
