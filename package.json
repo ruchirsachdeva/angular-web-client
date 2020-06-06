@@ -13,7 +13,7 @@
     "test": "yarn run clean:dist && karma start",
     "test:watch": "yarn run clean:dist && karma start --reporters dots,notify --single-run false",
     "docs": "typedoc --options typedoc.json  src/**/*.ts",
-    "start": "yarn run server:dev",
+    "start": "yarn run server:prod",
     "ngc": "ngc -p tsconfig.aot.json --locale=en-US",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
@@ -88,5 +88,9 @@
     "webpack": "~2.2.0",
     "webpack-dev-server": "~2.2.0",
     "webpack-merge": "^2.0.0"
+  },
+  "engines": {
+    "node": "8.12.0",
+    "npm": "6.4.1"
   }
 }

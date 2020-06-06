@@ -15,7 +15,7 @@ module.exports = webpackMerge(commonConfig, {
     sourceMapFilename: '[name].map',
     chunkFilename: '[id].chunk.js',
     // required for hot module replacement
-    publicPath: 'http://localhost:4200/',
+    publicPath: 'https://party-client-app.herokuapp.com',
   },
   plugins: [
     new DefinePlugin({
@@ -35,7 +35,7 @@ module.exports = webpackMerge(commonConfig, {
     },
     proxy: {
       '/api': {
-        target: 'http://localhost:8080',
+        target: 'https://party-server-app.herokuapp.com',
       }
     },
   },

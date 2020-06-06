@@ -19,6 +19,9 @@ const mergeAuthToken = (options: RequestOptionsArgs = {}) => {
   return newOptions;
 };
 
+// TODO remove after fixing http-proxy in server.js
+const host = "https://party-server-app.herokuapp.com";
+
 @Injectable()
 export class JsonHttp {
 
@@ -26,27 +29,27 @@ export class JsonHttp {
   }
 
   get(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.get(url, mergeAuthToken(options));
+    return this.http.get(host + url, mergeAuthToken(options));
   }
 
   post(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.post(url, body, mergeAuthToken(options));
+    return this.http.post(host + url, body, mergeAuthToken(options));
   }
 
   put(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.put(url, body, mergeAuthToken(options));
+    return this.http.put(host + url, body, mergeAuthToken(options));
   }
 
   delete(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.delete(url, mergeAuthToken(options));
+    return this.http.delete(host + url, mergeAuthToken(options));
   }
 
   patch(url: string, body: any, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.patch(url, body, mergeAuthToken(options));
+    return this.http.patch(host + url, body, mergeAuthToken(options));
   }
 
   head(url: string, options?: RequestOptionsArgs): Observable<Response> {
-    return this.http.head(url, mergeAuthToken(options));
+    return this.http.head(host + url, mergeAuthToken(options));
   }
 
 }
