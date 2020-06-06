@@ -1,7 +1,7 @@
 {
-  "name": "angular2-tutorial",
+  "name": "Application platform",
   "version": "0.1.0",
-  "description": "Angular2 tutorial sample application",
+  "description": "Application platform",
   "scripts": {
     "clean": "rimraf -- node_modules doc coverage dist aot",
     "clean:install": "yarn run clean && yarn install",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/springboot-angular2-tutorial/angular2-app.git"
+    "url": "https://github.com/ruchirsachdeva/angular-web-client"
   },
-  "author": "akirasosa <akirasosa@gmail.com>",
+  "author": "ruchirsachdeva <ruchirsachdeva@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/springboot-angular2-tutorial/angular2-app/issues"
+    "url": "https://github.com/ruchirsachdeva/angular-web-client/issues"
   },
-  "homepage": "https://github.com/springboot-angular2-tutorial/angular2-app",
+  "homepage": "https://github.com/ruchirsachdeva/angular-web-client",
   "dependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
